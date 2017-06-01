@@ -1,0 +1,43 @@
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <ul class="visible-links">
+          {% assign split_path = page.path | split: "/" %}
+          {% assign locale = split_path[1] %}
+          {% assign titles = site.data.navigation[locale].main %}
+          {% if locale == 'ko_KR' %}
+            {% assign locale_var = '/' %}
+          {% else %}
+            {% assign locale_var = locale | prepend:'/' | append:'/' %}
+          {% endif %}
+          <li class="masthead__menu-item masthead__menu-item--lg"><a href="{{ site.baseurl }}{{ locale_var }}">{{ titles[0].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}faq">{{ titles[1].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}troubleshooting">{{ titles[2].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}donations">{{ titles[3].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}credits">{{ titles[4].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}updating-to-boot9strap">{{ titles[5].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}region-changing">{{ titles[6].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}godmode9-usage">{{ titles[7].title }}</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}{{ locale_var }}site-navigation">{{ titles[8].title }}</a></li>
+        </ul>
+        <ul class="hidden-links links-menu hidden"></ul>
+        <ul class="hidden-links lang-menu hidden">
+          {% assign split_url = page.url | split: "/" %}
+          {% if split_url.size == 3 %}
+            {% assign langless_url = split_url[2] %}
+          {% else %}
+            {% assign langless_url = split_url[1] %}
+          {% endif %}
+          {% if langless_url == "index.html" %}
+            {% assign langless_url = "" %}
+          {% endif %}
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}/{{ langless_url }}">한국어</a></li>
+          <li class="masthead__menu-item"><a href="{{ site.baseurl }}/en_US/{{ langless_url }}">English</a></li>
+        </ul>
+        <button class="lang-selector"><div class="langicon"><i class="fa fa-language fa-lg" aria-hidden="true"></i></div></button>
+        <button class="nav-selector" id="toggle-nav"><div class="navicon"></div></button>
+      </nav>
+    </div>
+  </div>
+</div>

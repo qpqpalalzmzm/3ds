@@ -1,0 +1,30 @@
+---
+main:
+  -
+    title: 가이드
+  -
+    title: 자주 묻는 질문
+  -
+    title: 문제 해결
+  -
+    title: 기부
+  -
+    title: 기여자
+  -
+    title: boot9strap으로 업데이트
+  -
+    title: 지역 변경
+  -
+    title: GodMode9 사용법
+  -
+    title: 사이트맵
+bottom:
+  -
+    title: 이 가이드가 도움이 되어 고맙다면 <a href="bitcoin:1Ad3PnU6TmJxvJ62LobgMw5uT8hR1LQety">비트코인</a>을 통하여 제게 <a href="donations">기부</a>를 하실 수 있습니다.
+footer:
+  -
+    title: 소스 코드
+  -
+    title: 사이트맵
+  -
+    title: 왜 광고가 있나요?
